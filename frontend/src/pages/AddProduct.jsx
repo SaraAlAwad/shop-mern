@@ -32,7 +32,8 @@ const AddProduct = (props) => {
         fetch(apiUrl + "/api/products/add", {
             method: "POST",
             headers: {
-                token: props.token
+                // token: props.token
+                "Content-Type": "application/json",
             },
             body: formData //JSON.stringify
         })

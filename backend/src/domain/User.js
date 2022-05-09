@@ -21,15 +21,15 @@ function makeUser({
     if (!passwordHash && !password) {
         throw new Error("User must provide a password or passwordHash")
     }
-
+    const _pwSalt = passwordSalt || createRandomSalt()
 
     return {
         name,
         email,
         createdAt: createdAt || new Date().toString(),
         // we dont store the user password we store the hashed value
-        passwordHash,
-        passwordSalt,
+        passwordHash: passwordHash || createPasswordHash(password, _pwSalt),
+        passwordSalt: _pwSalt,
         _id,
     }
 

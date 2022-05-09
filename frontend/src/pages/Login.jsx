@@ -10,18 +10,21 @@ export const Login = (props) => {
 
     const navigate = useNavigate()
 
-    const login = (event) => {
+    const doLogin = (event) => {
         console.log("inside login function");
         event.preventDefault()
         console.log("before fetch");
+        console.log("email", email);
+        console.log("password", password);
         fetch(apiUrl + "/api/admin/login", {
-            mathod: "POST",
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({ email, password })
         })
-            .then((response) => response.json())
+            .then(response =>
+                response.json())
             .then(result => {
                 console.log("result", result);
                 if (result.err) {
@@ -37,12 +40,13 @@ export const Login = (props) => {
             })
             .catch(() => console.log("error in login component"))
             .finally(() => {
+
                 setEmail("")
                 setPassword("")
             })
-
-
     }
+
+
     return (
         <form className="flex-v">
             <label htmlFor="user-email">
@@ -55,7 +59,7 @@ export const Login = (props) => {
             </label>
             <input id="user-password" type="password" placeholder="password.." value={password} onChange={(e) => setPassword(e.target.value)} />
 
-            <button className="btn" onClick={login}>Login</button>
+            <button className="btn" onClick={doLogin}>Login</button>
             {error && <p className="error-message">{error}</p>}
             <br />
 

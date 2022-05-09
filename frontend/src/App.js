@@ -12,7 +12,7 @@ import EditProduct from './pages/EditProduct';
 
 function App() {
   const [token, setToken] = useState(null)
-  // const logout = () => setToken(null)
+  const logout = () => setToken(null)
   console.log("token:", token);
   return (
     <div className="App">
@@ -21,7 +21,7 @@ function App() {
           <Route path='/' element={<Dashboard />} />
           <Route path='/AllProducts' element={<AllProducts />} />
           <Route path='products/productDetails/:productId' element={<ProductDetails />} />
-          <Route path='/addProduct' element={<AddProduct token={token} />} />
+          <Route path='/addProduct' element={<AddProduct />} />
           {console.log("token", token)}
           <Route path='/login' element={<Login setToken={setToken} />} />
           <Route path='/register' element={<Registration />} />

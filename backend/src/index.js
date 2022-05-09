@@ -51,6 +51,8 @@ app.post("/api/products/add", uploadMiddleware, async (req, res) => {
         const variations = JSON.parse(productInfo.variations)
 
         const product = await addNewProduct(...productInfo, variations, imageLink)
+        // const product = await addNewProduct(productInfo)
+
         res.json(product)
     } catch (err) {
         res.status(500).json({ err: error.message || "Unknown error while creating new product." })
