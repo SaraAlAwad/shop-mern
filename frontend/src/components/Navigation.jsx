@@ -24,7 +24,7 @@ const Navigation = (props) => {
                 <li><Link to={"/"}> <FaWhmcs /> Settings</Link></li>
             </ul>
             <div className="container-logout">
-                <Link to={"/"}> <BiLogOut /> Log out</Link>
+                <Link to={"/logout"}> <BiLogOut /> Log out</Link>
             </div>
         </nav>
 

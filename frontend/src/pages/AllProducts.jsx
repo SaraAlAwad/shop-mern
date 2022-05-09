@@ -33,8 +33,8 @@ const AllProducts = (props) => {
                 <div className="container-products flex-r">
                     {allProducts.map(product => <ProductView key={product._id} product={product} />)}</div>
                 <Link to={"/addProduct"} className="btn">Add New Product</Link>
-
-            </section> </main>
+            </section>
+        </main>
     )
 }
 

@@ -22,7 +22,6 @@ function App() {
           <Route path='/AllProducts' element={<AllProducts />} />
           <Route path='products/productDetails/:productId' element={<ProductDetails />} />
           <Route path='/addProduct' element={<AddProduct />} />
-          {console.log("token", token)}
           <Route path='/login' element={<Login setToken={setToken} />} />
           <Route path='/register' element={<Registration />} />
           <Route path="/editproduct" element={<EditProduct />} />

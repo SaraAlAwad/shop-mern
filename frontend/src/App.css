@@ -237,6 +237,12 @@ nav ul {
 }
 
 /* +++++ ProductView Components +++++ */
+.container-products {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 3%;
+}
+
 .card {
   margin: 10px;
   background-color: #fff;
@@ -245,7 +251,6 @@ nav ul {
   overflow: hidden;
   min-width: 280px;
   min-height: 25vh;
-  flex-wrap: wrap;
 }
 
 .card img {
